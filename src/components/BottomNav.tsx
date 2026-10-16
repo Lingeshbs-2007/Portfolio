@@ -1,5 +1,5 @@
 import React from 'react';
-import { CrosshairMark } from './CrosshairMark';
+import { ScrollRotateMark } from './MotionPrimitives';
 
 interface BottomNavProps {
   onOpenMenu: () => void;
@@ -11,7 +11,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ onOpenMenu, onOpenContact 
     <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-xl flex items-center justify-between bg-[#0A0A0A] border border-neutral-800 text-white shadow-2xl px-4 py-2.5 sm:px-6 sm:py-3 transition-transform duration-200">
       {/* Graphic Logo Mark on Left */}
       <div className="flex items-center gap-3">
-        <CrosshairMark size={22} color="default" spin={true} />
+        <ScrollRotateMark targetAngle={135} size={22} color="#E50914" />
         <span className="hidden sm:inline font-headline text-xs tracking-widest text-neutral-300 uppercase">
           LINGESH B
         </span>

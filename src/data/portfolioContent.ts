@@ -29,8 +29,8 @@ export interface ProcessStep {
   variant: 'red' | 'charcoal' | 'light' | 'outline';
 }
 
-export interface PricingPlan {
-  type: 'Monthly' | 'Project Based';
+export interface OpportunityPlan {
+  type: 'Internship' | 'Academic & Projects';
   label: string;
   badge: string;
   price: string;
@@ -39,128 +39,146 @@ export interface PricingPlan {
   features: string[];
 }
 
+export interface TestimonialItem {
+  id: string;
+  eventName: string;
+  role: string;
+  avatar: string;
+  initialMessage: string;
+  responseMessage: string;
+  tag: string;
+}
+
 export const PORTFOLIO_CONTENT = {
   hero: {
+    greeting: "Hi, I'm Lingesh — a Computer Science and Engineering Student.",
+    summary:
+      "I enjoy building practical software projects across web development, blockchain, and AI. I am continuously improving my problem-solving skills and exploring technologies that help me turn ideas into working applications.",
     nameLine1: 'LINGESH',
-    nameLine2: 'B',
-    roleLine1: 'CSE STUDENT',
-    roleLine2: '& DEVELOPER',
-    headlineLine1: 'CREATING',
-    headlineLine2: 'WEBSITES',
-    headlineLine3: '& APPS',
-    location: 'TIRUPPUR, IN',
-    phone: '+91 9894385025',
-    experienceYears: '200+ LeetCode · 5 Core Projects',
+    nameLine2: 'B.',
+    roleLine1: 'WEB3 & FULL-STACK',
+    roleLine2: 'DEVELOPER',
+    headlineLine1: 'BUILDING',
+    headlineLine2: 'PRACTICAL',
+    headlineLine3: 'SOFTWARE',
+    location: 'TIRUPPUR, INDIA',
+    experienceYears: '200+ LeetCode · 4 Core Projects',
     copyright: '©2026',
-    educationShort: 'B.E. CSE (CGPA 8.20) · Dr. N.G.P. iTech',
-    portraitImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    educationShort: 'B.E. CSE (CGPA 8.20) · Dr. N.G.P. Institute of Technology',
+    portraitImage: '', // Blank by default so container renders the stylized initials/silhouette card rather than an unrelated portrait
     tools: [
       { name: 'Java', icon: 'Cpu' },
       { name: 'React', icon: 'Code2' },
       { name: 'Solidity', icon: 'Boxes' },
       { name: 'Python', icon: 'Terminal' },
-      { name: 'Node.js', icon: 'Server' },
+      { name: 'TypeScript', icon: 'Code2' },
       { name: 'SQL & MongoDB', icon: 'Database' }
     ]
   },
   socials: [
     { name: 'GITHUB', url: 'https://github.com/Lingeshbs-2007' },
-    { name: 'LINKEDIN', url: 'https://linkedin.com/in/lingesh-b-825a68376' },
-    { name: 'LEETCODE', url: 'https://leetcode.com' },
+    { name: 'LINKEDIN', url: 'https://www.linkedin.com/in/lingesh-b-825a68376/' },
+    { name: 'LEETCODE', url: 'https://leetcode.com/u/J00i7ZP2T8/' },
     { name: 'EMAIL', url: 'mailto:lingeshbs2007@gmail.com' }
   ],
   editorialBanner: {
     image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=85',
-    caption: 'EDITORIAL MOTION VISUAL · SWISS TYPOGRAPHY'
+    caption: 'ENGINEERING & PRACTICAL SOFTWARE IMPLEMENTATION'
   },
   projects: [
     {
       id: 'fertitrack',
       index: '01 / 06',
-      title: 'BLOCKCHAIN FERTILIZER TRACKING',
-      category: 'BLOCKCHAIN / WEB3',
+      title: 'FERTITRACK — BLOCKCHAIN SUBSIDY TRACKING',
+      category: 'BLOCKCHAIN / SEPOLIA',
       year: '2025',
       image: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=900&q=80',
       aspect: 'tall',
-      description: 'Blockchain-Based Fertilizer Subsidy Tracking System developing a decentralized pipeline to track fertilizer subsidy distribution from farmer registration to dealer-based claiming.',
-      technologies: ['React', 'Solidity', 'Ethers.js', 'Ethereum', 'MetaMask'],
+      description:
+        'A blockchain-based application designed to improve the traceability and transparency of fertilizer subsidy distribution. The project explores smart-contract-based eligibility and claim tracking, farmer records, dealer interactions, and public visibility of distribution statistics.',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Solidity', 'Ethers.js v6', 'MetaMask', 'Ethereum Sepolia'],
       features: [
-        'Built a transparent platform to manage farmer subsidy records and monitor fertilizer claims',
-        'Directly reduced duplicate and incorrect claims across distribution channels',
-        'Smart contract verification connecting farmers and licensed agricultural dealers',
-        'EVM state integration using MetaMask wallet transactions'
+        'Farmer registration by an authorized administrator',
+        'Smart-contract-based fertilizer voucher and claim tracking',
+        'Dealer interaction with farmer records',
+        'Public dashboard statistics for transparent monitoring',
+        'Hashed Aadhaar representation rather than storing raw Aadhaar numbers in the smart contract'
       ],
-      githubUrl: 'https://github.com/Lingeshbs-2007'
+      githubUrl: 'https://github.com/Lingeshbs-2007/FertiTrack'
     },
     {
       id: 'certichain',
       index: '02 / 06',
-      title: 'DECENTRALIZED CERTIFICATE SYSTEM',
-      category: 'DAPP / IPFS',
+      title: 'CERTICHAIN — CERTIFICATE VERIFICATION',
+      category: 'BLOCKCHAIN / ETHEREUM',
       year: '2025',
       image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=900&q=80',
       aspect: 'landscape',
-      description: 'Decentralized Certificate Verification System building a tamper-proof credential issuance and validation platform using blockchain and IPFS.',
-      technologies: ['React', 'Solidity', 'IPFS', 'Ethers.js', 'Ethereum', 'MetaMask'],
+      description:
+        'A blockchain-based certificate verification application designed to explore tamper-resistant certificate records and easier verification of academic credentials.',
+      technologies: ['React', 'Vite', 'Solidity', 'Ethers.js', 'MetaMask', 'Ethereum'],
       features: [
-        'Built a decentralized certificate issuance and verification platform for secure and tamper-proof credential validation',
-        'Stored certificate files on IPFS and verified hashes using Solidity smart contracts',
-        'Eliminated intermediary attestation delays with cryptographic proof of authenticity',
-        'Integrated multi-party validation interfaces for employers and academic institutions'
+        'Authorized certificate issuance workflow',
+        'Certificate record retrieval and verification portal',
+        'Tamper-resistant credential records managed via Solidity smart contracts',
+        'Direct verification interface eliminating intermediary attestation delays'
       ],
-      githubUrl: 'https://github.com/Lingeshbs-2007'
-    },
-    {
-      id: 'smart-helmet',
-      index: '03 / 06',
-      title: 'SMART HELMET RIDER SAFETY',
-      category: 'IOT / EMBEDDED HARDWARE',
-      year: '2024',
-      image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80',
-      aspect: 'tall',
-      description: 'Smart Helmet for Rider Safety System using Arduino Uno to detect accidents, measure impact intensity, and monitor rider speed in real time.',
-      technologies: ['Arduino Uno', 'Accelerometer', 'GPS', 'GSM', 'Potentiometer'],
-      features: [
-        'Designed a smart helmet system using Arduino Uno to detect accidents and monitor rider speed in real time',
-        'Integrated GPS and GSM modules for real-time emergency coordinate alerts and rider warnings',
-        'Tri-axis accelerometer threshold trigger for automated collision notification to emergency contacts',
-        'Potentiometer-based speed telemetry sensing with audio-visual rider alerts'
-      ],
-      githubUrl: 'https://github.com/Lingeshbs-2007'
+      githubUrl: 'https://github.com/Lingeshbs-2007/CertiChain'
     },
     {
       id: 'fpo-ledger',
-      index: '04 / 06',
+      index: '03 / 06',
       title: 'FPO LEDGER & PROFIT-SHARING',
-      category: 'SMART CONTRACTS / ETHEREUM',
+      category: 'SMART CONTRACTS / WEB3',
       year: '2025',
       image: 'https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=900&q=80',
-      aspect: 'landscape',
-      description: 'Blockchain-Based FPO Ledger & Profit-Sharing System developed to maintain transparent and traceable records of farmer produce, sales, and transactions.',
-      technologies: ['React', 'Solidity', 'Ethers.js', 'Ethereum', 'MetaMask'],
+      aspect: 'tall',
+      description:
+        'A blockchain-based project exploring transparent transaction records for Farmer Producer Organizations, including farmer purchases, buyer sales, and rule-based profit-sharing calculations.',
+      technologies: ['Solidity', 'Ethereum', 'Smart Contracts', 'React', 'Web3'],
       features: [
-        'Developed a blockchain-based FPO ledger to maintain transparent and traceable records of farmer produce, sales, and transactions',
-        'Implemented Solidity smart contracts to calculate and distribute farmer profit shares based on predefined rules',
-        'Guaranteed tamper-proof revenue settlement for agricultural collective producer organizations',
-        'Real-time transaction auditing via Web3 frontend connection'
+        'Transparent transaction records for farmer produce, purchases, and sales',
+        'Solidity smart contract implementing rule-based profit-sharing calculations',
+        'Decentralized ledger accessible to registered collective members',
+        'Ongoing exploration into automated agricultural collective revenue distribution'
       ],
       githubUrl: 'https://github.com/Lingeshbs-2007'
     },
     {
       id: 'jarvis',
-      index: '05 / 06',
-      title: 'JARVIS — AI PERSONAL ASSISTANT',
-      category: 'PYTHON / AI AUTOMATION',
+      index: '04 / 06',
+      title: 'JARVIS — PERSONAL VOICE ASSISTANT',
+      category: 'PYTHON / AUTOMATION',
       year: '2024',
       image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=900&q=80',
-      aspect: 'tall',
-      description: 'Voice-based AI assistant that converses with users, answers questions, and responds through voice with natural-language laptop automation.',
-      technologies: ['Python', 'AI', 'Automation', 'Speech Recognition', 'Pyttsx3'],
+      aspect: 'landscape',
+      description:
+        'A personal voice-assistant project designed to support voice-based interaction and desktop automation. The implementation explores speech recognition, text-to-speech, application launching, and AI-assisted responses.',
+      technologies: ['Python', 'Speech Recognition', 'pyttsx3', 'Desktop Automation'],
       features: [
-        'Developed a voice-based AI assistant that converses with users, answers questions, and responds through voice',
-        'Integrated natural-language commands with laptop task automation, allowing users to control system functions through voice',
-        'Automated desktop workflows, browser searches, file operations, and application launches',
-        'Modular command processor for developer productivity automation'
+        'Vocal command capture and acoustic speech recognition pipeline in Python',
+        'Text-to-speech synthesized audio feedback for conversational interaction',
+        'Desktop task automation: launching applications, search queries, and system routines',
+        'Personal development project exploring voice-driven developer productivity'
+      ],
+      githubUrl: 'https://github.com/Lingeshbs-2007'
+    },
+    {
+      id: 'smart-helmet',
+      index: '05 / 06',
+      title: 'SMART HELMET FOR RIDER SAFETY',
+      category: 'EMBEDDED HARDWARE / IOT',
+      year: '2024',
+      image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80',
+      aspect: 'tall',
+      description:
+        'A rider safety prototype developed using Arduino Uno to detect collisions, monitor rider speed, and alert emergency contacts with real-time GPS coordinates.',
+      technologies: ['Arduino Uno', 'Accelerometer', 'GPS', 'GSM', 'Potentiometer'],
+      features: [
+        'Arduino Uno microcontroller firmware calibrated for impact threshold detection',
+        'Integrated GPS and GSM modules for real-time emergency alert SMS dispatch',
+        'Tri-axis accelerometer trigger for automated accident detection',
+        'Speed monitoring via potentiometer sensor telemetry'
       ],
       githubUrl: 'https://github.com/Lingeshbs-2007'
     },
@@ -169,132 +187,140 @@ export const PORTFOLIO_CONTENT = {
       index: '06 / 06',
       title: '200+ LEETCODE ALGORITHMIC SUITE',
       category: 'DATA STRUCTURES / JAVA',
-      year: '2025',
+      year: '2024–2026',
       image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80',
       aspect: 'landscape',
-      description: 'Comprehensive problem-solving repository covering 200+ LeetCode problems in Java spanning Dynamic Programming, Graphs, Trees, and Array transformations.',
-      technologies: ['Java', 'Algorithms', 'Data Structures', 'OOP', 'Optimization'],
+      description:
+        'Practicing Data Structures and Algorithms in Java and continuously improving problem-solving skills through LeetCode, covering arrays, strings, linked lists, trees, graphs, and dynamic programming.',
+      technologies: ['Java', 'Algorithms', 'Data Structures', 'OOP', 'Problem Solving'],
       features: [
-        'Solved 200+ LeetCode algorithmic challenges demonstrating strong Java object-oriented foundations',
-        'Implemented optimized space-time solutions across binary search, sliding window, and backtracking',
-        'Applied algorithmic thinking to smart contract gas minimization and backend data queries',
-        'Active problem solver preparing for software engineering and technical roles'
+        '200+ algorithmic problems solved with clean Java implementations',
+        'Focus on optimal time and space complexity across core problem patterns',
+        'Active problem-solving profile on LeetCode: leetcode.com/u/J00i7ZP2T8/',
+        'Building strong computer science foundations for software engineering interviews'
       ],
-      githubUrl: 'https://github.com/Lingeshbs-2007'
+      githubUrl: 'https://leetcode.com/u/J00i7ZP2T8/'
     }
   ] as ProjectItem[],
   statement: {
-    line1Left: 'DRIVEN BY DESIGN,',
-    line2Right: 'POWERED BY PURPOSE',
+    line1Left: 'LEARN BY',
+    line1Right: 'BUILDING,',
+    line2Left: 'DRIVEN BY',
+    line2Right: 'PURPOSE',
     reelThumbnail: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=900&q=80',
     reelVideoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-in-an-office-41551-large.mp4',
     stats: [
-      { number: '8.20', label: 'B.E. CSE CGPA · DR. N.G.P. ITECH' },
-      { number: '200+', label: 'LEETCODE PROBLEMS IN JAVA' },
-      { number: '90.1%', label: 'HSC MERIT · LITERACY MISSION' }
+      { number: '8.20', label: 'B.E. CSE CGPA · DR. N.G.P. INSTITUTE OF TECHNOLOGY' },
+      { number: '200+', label: 'LEETCODE PROBLEMS SOLVED IN JAVA' },
+      { number: '90.1%', label: 'HSC MERIT · LITERACY MISSION MATRIC HR. SEC.' }
     ],
-    bio: 'Lingesh B is a Computer Science and Engineering student at Dr. N.G.P. iTech with hands-on experience in Java, React.js, SQL, and Blockchain development. Passionate about building secure, scalable applications and expanding expertise in the MERN stack, Solidity smart contracts, and embedded IoT systems.'
+    bio: 'I am a Computer Science and Engineering student at Dr. N.G.P. Institute of Technology (2024–2028). I enjoy building practical software applications across full-stack web development, blockchain, and AI. I learn primarily by solving programming problems and implementing working projects, and I am actively preparing for software development internships and placement opportunities.'
   },
   services: [
     {
-      id: 'web-design',
-      title: 'FULL-STACK & REACT WEB APPS',
-      description: 'Building modern, high-performance web applications using React, HTML, CSS, JavaScript, and expanding into the MERN stack.',
+      id: 'web-development',
+      title: 'WEB APPLICATION DEVELOPMENT',
+      description:
+        'Building responsive frontends and full-stack web applications using React, TypeScript, HTML, CSS, JavaScript, and Node.js.',
       features: [
-        'Pixel-perfect responsive frontend in React',
-        'RESTful API integration with Node.js & Express.js',
-        'Relational SQL schemas & MongoDB data modeling',
-        'Clean component architecture and state management'
+        'Component-driven UI development with React and Vite',
+        'Responsive styling using Tailwind CSS',
+        'RESTful API communication and client state management',
+        'Relational SQL schemas and MongoDB document storage'
       ],
-      timePeriod: 'Time period: 2–3 weeks',
+      timePeriod: 'Focus: Full-Stack & React',
       theme: 'dark'
     },
     {
       id: 'blockchain-dev',
       title: 'BLOCKCHAIN & SMART CONTRACTS',
-      description: 'Architecting decentralized applications, custom Solidity smart contracts, and IPFS tamper-proof verification on Ethereum.',
+      description:
+        'Developing decentralized applications and smart contracts exploring transparency, subsidy tracking, and verifiable credential records.',
       features: [
-        'Solidity smart contract authoring & audits',
-        'Ethers.js & MetaMask wallet integrations',
-        'IPFS decentralized file & certificate storage',
-        'Escrow, subsidy & automated profit-sharing rules'
+        'Solidity smart contract authoring and local testing',
+        'Ethers.js integration with MetaMask wallet',
+        'State-managed registries on Ethereum testnets (Sepolia)',
+        'Transparent eligibility and voucher verification logic'
       ],
-      timePeriod: 'Time period: 2–4 weeks',
+      timePeriod: 'Focus: Solidity & Web3',
       theme: 'light'
     },
     {
       id: 'ai-automation',
-      title: 'PYTHON AI & DESKTOP AUTOMATION',
-      description: 'Engineering intelligent voice-based assistants, speech recognition workflows, and desktop process automation systems.',
+      title: 'AI-POWERED EXPERIMENTATION',
+      description:
+        'Building voice-based assistants and automation scripts in Python, exploring speech recognition, text-to-speech, and AI integrations.',
       features: [
-        'Acoustic speech recognition & voice synthesis',
-        'Natural-language command parsing',
-        'OS task automation and background scripts',
-        'Integration with local and external APIs'
+        'Python scripting and desktop process automation',
+        'Speech recognition and audio feedback synthesis',
+        'Exploratory AI API integration for natural responses',
+        'Command parsing for personal productivity workflows'
       ],
-      timePeriod: 'Time period: 1–2 weeks',
+      timePeriod: 'Focus: Python & AI APIs',
       theme: 'light'
     },
     {
-      id: 'iot-embedded',
-      title: 'IOT & EMBEDDED SYSTEMS',
-      description: 'Prototyping safety and monitoring hardware with Arduino Uno, sensors, and GPS/GSM real-time telemetry.',
+      id: 'data-analytics',
+      title: 'DATA ANALYSIS & VISUALIZATION',
+      description:
+        'Analyzing datasets, cleaning information, and creating visual summaries, building on 15 days of internship experience at Techvolt Software.',
       features: [
-        'Arduino Uno microcontroller firmware',
-        'Accelerometer & potentiometer sensor calibration',
-        'GPS location tracking & GSM emergency messaging',
-        'Hardware-to-cloud telemetry & alert pipelines'
+        'Data preprocessing and cleaning techniques',
+        'Exploratory data analysis in Python',
+        'Visualization charts and structured reporting',
+        'Algorithmic problem-solving foundation in Java'
       ],
-      timePeriod: 'Time period: 2–3 weeks',
+      timePeriod: 'Experience: Techvolt Intern',
       theme: 'dark'
     }
   ],
   process: {
-    headingLeft: 'FROM IDEA',
-    headingRight: 'TO LAUNCH',
-    intro: 'Every successful software project starts with a clear engineering process. From requirement scoping to deployment, defined stages ensure reliability, security, and performance.',
+    headingLeft: 'FROM CONCEPT',
+    headingRight: 'TO WORKING CODE',
+    intro:
+      'My approach to building software projects centres on clear problem definition, disciplined implementation, and thorough testing.',
     steps: [
       {
         step: '01',
-        title: 'DISCOVER',
+        title: 'UNDERSTAND',
         features: [
-          'Project scoping & architectural requirements',
-          'Data schema design (SQL / MongoDB / EVM state)',
-          'Tech stack selection & feasibility validation',
-          'Defining milestone deliverables and timelines'
+          'Problem research and requirement scoping',
+          'Identifying user interactions and data flow',
+          'Selecting practical, modern technology stacks',
+          'Defining core milestones before writing code'
         ],
         variant: 'red'
       },
       {
         step: '02',
-        title: 'DESIGN',
+        title: 'ARCHITECT',
         features: [
-          'Wireframes and user interaction flows',
-          'Component hierarchy & state management plan',
-          'Smart contract rule definitions & state machines',
-          'Interface prototyping & accessibility checks'
+          'Schema design (SQL tables, MongoDB, or EVM state)',
+          'Component hierarchy and state management planning',
+          'Smart contract rule and access control definitions',
+          'Wireframing clean and accessible user interfaces'
         ],
         variant: 'charcoal'
       },
       {
         step: '03',
-        title: 'BUILD',
+        title: 'IMPLEMENT',
         features: [
-          'Clean, modular code in React, Java, or Python',
-          'Solidity smart contracts with gas optimization',
-          'Database connectivity & API integration',
-          'Thorough unit testing and edge case handling'
+          'Clean, structured code in Java, React, or Python',
+          'Solidity smart contract logic with proper validations',
+          'API connectivity and secure data handling',
+          'Testing edge cases and functional flow'
         ],
         variant: 'light'
       },
       {
         step: '04',
-        title: 'LAUNCH',
+        title: 'VERIFY & DEPLOY',
         features: [
-          'End-to-end testing and quality assurance',
-          'Deployment to production or Ethereum testnets',
-          'Performance profiling & security checks',
-          'Clear technical documentation and GitHub release'
+          'Testing user flows and debugging contract calls',
+          'Deploying to Ethereum testnets (Sepolia) or web hosting',
+          'Writing comprehensive README documentation on GitHub',
+          'Iterating based on peer and mentor feedback'
         ],
         variant: 'outline'
       }
@@ -302,117 +328,134 @@ export const PORTFOLIO_CONTENT = {
   },
   education: [
     {
-      degree: 'B.E. Computer Science & Engineering',
-      institution: 'Dr. N.G.P. iTech',
+      degree: 'B.E. Computer Science and Engineering',
+      institution: 'Dr. N.G.P. Institute of Technology',
       period: '2024 – 2028',
       score: 'CGPA : 8.20',
       status: 'Current Undergraduate'
     },
     {
       degree: 'Higher Secondary Certificate (HSC)',
-      institution: 'Literacy Mission Matric Hr Sec School',
+      institution: 'Literacy Mission Matric Higher Secondary School',
       period: '2024',
       score: 'Percentage : 90.1 %',
       status: 'Completed'
     }
   ],
+  internship: {
+    role: 'Data Analytics Intern',
+    organization: 'Techvolt Software Pvt. Ltd.',
+    duration: '15 Days',
+    description:
+      'Completed a short-term internship focused on data analytics, gaining exposure to data preprocessing, analysis, visualization, and reporting.'
+  },
   skillsCategorized: [
-    { category: 'Languages', skills: ['Java', 'Python', 'JavaScript'] },
-    { category: 'Frontend', skills: ['HTML', 'CSS', 'React'] },
-    { category: 'Backend', skills: ['Node.js', 'Express.js (Learning)'] },
-    { category: 'Database', skills: ['SQL', 'MongoDB'] },
-    { category: 'Blockchain', skills: ['Solidity', 'Ethers.js (Learning)'] },
-    { category: 'Tools', skills: ['Git', 'GitHub', 'VS Code'] }
+    { category: 'Programming & DSA', skills: ['Java', 'Data Structures & Algorithms', 'Python'] },
+    { category: 'Web Development', skills: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Node.js'] },
+    { category: 'Blockchain & Web3', skills: ['Solidity', 'Ethereum', 'Ethers.js', 'MetaMask', 'Smart Contracts'] },
+    { category: 'Data & Databases', skills: ['SQL', 'MongoDB', 'Data Preprocessing', 'Data Visualization'] },
+    { category: 'Tools & Platforms', skills: ['Git', 'GitHub', 'VS Code', 'Sepolia Testnet'] }
   ],
-  certificationsAndAchievements: [
+  certifications: [
     {
-      title: 'NPTEL Certifications',
-      description: 'Cloud Computing & Introduction to IoT'
+      title: 'NPTEL — Cloud Computing',
+      organization: 'NPTEL / IIT'
     },
     {
-      title: 'Prompt Engineering',
-      description: 'VisaiThalam Solutions'
+      title: 'NPTEL — Introduction to IoT',
+      organization: 'NPTEL / IIT'
     },
     {
-      title: '200+ LeetCode Problems',
-      description: 'Java Data Structures and Algorithms Mastery'
-    },
-    {
-      title: 'Student Development Council',
-      description: 'Organized KANAM\'26 and college technical events'
-    },
-    {
-      title: 'Data Science Workshop',
-      description: 'IIT Bombay'
+      title: 'Prompt Engineering Value Added Course',
+      organization: 'VisaiThalam Solutions'
     }
   ],
   brands: [
-    'Dr. N.G.P. iTech',
-    'Literacy Mission',
-    'NPTEL & IIT Bombay',
-    'VisaiThalam',
-    'Ethereum & IPFS',
-    'LeetCode'
+    'Dr. N.G.P. Institute of Technology',
+    'Techvolt Software (Internship)',
+    'Literacy Mission Hr. Sec.',
+    'NPTEL / IIT Online Learning',
+    'VisaiThalam Solutions',
+    'LeetCode (200+ Solved)'
   ],
-  testimonials: [
+  activitiesAndEvents: [
     {
-      id: 't1',
-      clientName: 'Department Academic Guide',
-      role: 'Dept. of CSE · Dr. N.G.P. iTech',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
-      initialMessage: 'How did Lingesh demonstrate technical capability across blockchain and embedded systems coursework?',
-      responseMessage: 'Lingesh developed both the Fertilizer Subsidy tracking dApp and the Smart Helmet rider safety system with exceptional dedication. His 8.20 CGPA and 200+ LeetCode problem solutions in Java reflect deep commitment to engineering.'
+      id: 'hackiton',
+      eventName: "HackITon'26 · K.S.R. College of Engineering",
+      role: '24-Hour Hackathon · Oct 8–9, 2026',
+      avatar: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=150&q=80',
+      initialMessage: 'Participated in an intensive 24-hour hackathon, working on predictive solar energy optimization for grid-connected homes.',
+      responseMessage: 'Engineered an algorithmic approach for household solar generation prediction and battery balancing under rapid hackathon constraints.',
+      tag: 'HACKATHON PARTICIPATION'
     },
     {
-      id: 't2',
-      clientName: 'Student Development Council Lead',
-      role: 'KANAM\'26 Technical Committee',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80',
-      initialMessage: 'What was Lingesh\'s impact in organizing KANAM\'26 and institutional events?',
-      responseMessage: 'Lingesh took charge of technical event logistics, collaborative coordination, and execution with flawless initiative. He balances rigorous academics with strong practical leadership.'
+      id: 'kpr-ignitrion',
+      eventName: 'KPR Ignitrion · KPR Institute of Engineering & Technology',
+      role: 'Project & Paper Presentation · Sep 18–19, 2026',
+      avatar: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=150&q=80',
+      initialMessage: 'Participated individually in both project presentation and paper presentation with FertiTrack under the team name BlockHarvest.',
+      responseMessage: 'Presented the smart-contract architecture for fertilizer subsidy tracking and transparent claim verification to faculty evaluators.',
+      tag: 'TECHNICAL PRESENTATION'
+    },
+    {
+      id: 'eureka-pitching',
+      eventName: 'Eureka Idea Pitching · National Entrepreneurship Challenge / IIT Bombay Context',
+      role: 'Online Pre-Zonals · Innovation Pitch',
+      avatar: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=150&q=80',
+      initialMessage: 'Participated individually in the online pre-zonals associated with Eureka Idea Pitching in the NEC / IIT Bombay context.',
+      responseMessage: 'Pitched agricultural transparency mechanisms using decentralized ledger technology for rural producer collectives.',
+      tag: 'IDEA PITCHING'
+    },
+    {
+      id: 'sdc-leadership',
+      eventName: 'Student Development Council · Dr. N.G.P. Institute of Technology',
+      role: 'Executive Member · Event Coordination',
+      avatar: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=150&q=80',
+      initialMessage: 'Executive Member of the Student Development Council, contributing to planning and coordinating institutional technical events.',
+      responseMessage: 'Coordinated technical symposium sessions including KANAM\'26, speaker logistics, and collaborative peer learning activities.',
+      tag: 'COUNCIL LEADERSHIP'
     }
-  ],
-  pricing: {
+  ] as TestimonialItem[],
+  opportunities: {
     monthly: {
-      type: 'Monthly',
-      label: 'DEDICATED TECHNICAL INTERN',
-      badge: 'OPEN FOR HIRE',
-      price: '$1,500',
-      period: '/ month',
-      description: 'Full-time or part-time technical internship commitment across React, Java, Solidity smart contracts, and full-stack development.',
+      type: 'Internship',
+      label: 'TECHNICAL INTERNSHIP',
+      badge: 'OPEN TO WORK',
+      price: '2026',
+      period: 'Opportunities',
+      description: 'Seeking software development internships to apply problem-solving skills in Java, React, SQL, and Web3 technologies.',
       features: [
-        'Dedicated 40 hrs/week engineering focus',
-        'Java, React, SQL, and Solidity builds',
-        'Daily git commits, PRs, and team standups',
-        'Continuous problem-solving and documentation',
-        'Direct email & phone contact (+91 9894385025)',
-        'Available immediately for 2026 roles'
+        'Dedicated student engineer eager to learn & contribute',
+        'Strong Java & Data Structures foundation (200+ LeetCode)',
+        'React, TypeScript, Tailwind CSS, & Node.js frontend/backend',
+        'Solidity smart contract & Web3 development experience',
+        'Data analytics background (Techvolt Software internship)',
+        'Dr. N.G.P. iTech CSE Undergraduate (CGPA: 8.20)'
       ]
-    },
+    } as OpportunityPlan,
     projectBased: {
-      type: 'Project Based',
-      label: 'SCOPED CONTRACT BUILD',
-      badge: 'FIXED SCOPE',
-      price: '$950',
-      period: '/ milestone',
-      description: 'Complete delivery of a defined web application, smart contract module, or Python automation solution with testing and deployment.',
+      type: 'Academic & Projects',
+      label: 'ACADEMIC & HACKATHONS',
+      badge: 'COLLABORATION',
+      price: 'OPEN',
+      period: 'Projects',
+      description: 'Open for hackathons, engineering competitions, research paper presentations, and open-source contributions.',
       features: [
-        'Full end-to-end project implementation',
-        'Smart contracts on Ethereum / IPFS or MERN web app',
-        'Clean repository with documentation on GitHub',
-        'Thorough testing and verification',
-        '2 rounds of revisions included',
-        'Post-delivery support and handover'
+        'Hands-on hackathon experience (HackITon\'26 24-hr)',
+        'Paper and project presentation experience (KPR Ignitrion)',
+        'Decentralized systems and AI application interest',
+        'Modular, maintainable code with git version control',
+        'Clear technical documentation and presentation skills',
+        'Direct contact: lingeshbs2007@gmail.com'
       ]
-    }
+    } as OpportunityPlan
   },
   contact: {
-    headline: 'LET’S WORK TOGETHER',
+    headline: 'LET’S CONNECT',
+    subheadline: 'Available for software development internships, hackathons, and technical collaborations.',
     emailPlaceholder: 'Enter your email address',
-    submitText: 'GET IN TOUCH',
+    submitText: 'SEND MESSAGE',
     email: 'lingeshbs2007@gmail.com',
-    phone: '+91 9894385025',
-    location: 'Tiruppur, Tamil Nadu, India',
-    phoneNote: 'Available for software internships, hackathons & technical projects'
+    location: 'Tiruppur, Tamil Nadu, India'
   }
 };

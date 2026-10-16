@@ -24,7 +24,7 @@ export interface AchievementItem {
   id: string;
   title: string;
   organization: string;
-  type: 'Certification' | 'Presentation' | 'Hackathon' | 'Workshop' | 'Leadership';
+  type: 'Certification' | 'Presentation' | 'Hackathon' | 'Workshop' | 'Leadership' | 'Problem Solving';
   description?: string;
 }
 

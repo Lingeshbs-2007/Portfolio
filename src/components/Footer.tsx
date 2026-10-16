@@ -1,6 +1,6 @@
 import React from 'react';
 import { PORTFOLIO_CONTENT } from '../data/portfolioContent';
-import { CrosshairMark } from './CrosshairMark';
+import { ScrollRotateMark, FadeUp } from './MotionPrimitives';
 import { ArrowUp, ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -10,11 +10,12 @@ export const Footer: React.FC = () => {
 
   const navLinks = [
     { label: 'HOME', href: '#hero' },
-    { label: 'SELECTED WORK', href: '#projects' },
-    { label: 'STATEMENT & ABOUT', href: '#about' },
-    { label: 'SERVICES', href: '#services' },
+    { label: 'PROJECTS', href: '#projects' },
+    { label: 'ABOUT', href: '#about' },
+    { label: 'SKILLS & FOCUS', href: '#services' },
     { label: 'PROCESS', href: '#process' },
-    { label: 'PRICING', href: '#pricing' },
+    { label: 'ACTIVITIES', href: '#testimonials' },
+    { label: 'OPPORTUNITIES', href: '#pricing' },
     { label: 'CONTACT', href: '#contact' },
   ];
 
@@ -27,12 +28,12 @@ export const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-[#070707] text-white pt-20 pb-16 border-t border-neutral-900 relative z-10">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
-        {/* Decorative Crosses Near Top */}
+        {/* Decorative Crosses Near Top: Scroll-target rotations 135, 270, -135 */}
         <div className="flex items-center justify-between border-b border-neutral-800 pb-8">
           <div className="flex items-center gap-4">
-            <CrosshairMark size={22} color="red" spin={true} />
-            <CrosshairMark size={22} color="white" spin={false} />
-            <CrosshairMark size={22} color="red" spin={true} />
+            <ScrollRotateMark targetAngle={135} size={22} color="#E50914" />
+            <ScrollRotateMark targetAngle={270} size={22} color="#FFFFFF" />
+            <ScrollRotateMark targetAngle={-135} size={22} color="#E50914" />
           </div>
 
           <button
@@ -46,18 +47,18 @@ export const Footer: React.FC = () => {
 
         {/* Middle Navigation & Information Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-          {/* Design statement */}
-          <div className="md:col-span-5 space-y-4">
+          {/* Student Statement */}
+          <FadeUp delay={0.15} trigger="view" className="md:col-span-5 space-y-4">
             <span className="font-mono text-xs text-neutral-500 uppercase tracking-widest block">
-              ENGINEERING PHILOSOPHY
+              ENGINEERING OBJECTIVE
             </span>
             <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-md">
-              Building decentralized web products, high-integrity smart contract architectures, and performant user interfaces with Swiss typographic precision.
+              Building practical software applications across web development, blockchain, and AI. Developing strong technical foundations in Java and Data Structures while preparing for software development internships and placement opportunities.
             </p>
-          </div>
+          </FadeUp>
 
           {/* Quick Page Links */}
-          <div className="md:col-span-4 space-y-3">
+          <FadeUp delay={0.25} trigger="view" className="md:col-span-4 space-y-3">
             <span className="font-mono text-xs text-neutral-500 uppercase tracking-widest block">
               DIRECTORY
             </span>
@@ -73,10 +74,10 @@ export const Footer: React.FC = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </FadeUp>
 
           {/* Socials & Contact */}
-          <div className="md:col-span-3 space-y-3">
+          <FadeUp delay={0.35} trigger="view" className="md:col-span-3 space-y-3">
             <span className="font-mono text-xs text-neutral-500 uppercase tracking-widest block">
               CONNECT
             </span>
@@ -94,46 +95,46 @@ export const Footer: React.FC = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </FadeUp>
         </div>
 
-        {/* Bottom Lower Row: Oversized Stacked Name & Wide Red Capsule "BOOK A CALL" */}
+        {/* Bottom Lower Row: Oversized Stacked Name & Wide Red Capsule "GET IN TOUCH" */}
         <div className="pt-12 border-t border-neutral-900 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
           {/* Oversized Stacked Name: Red on line 1, White on line 2 */}
-          <div className="font-headline text-6xl sm:text-8xl lg:text-9xl leading-[0.85] tracking-tighter select-none">
+          <FadeUp delay={0.2} trigger="view" className="font-headline text-6xl sm:text-8xl lg:text-9xl leading-[0.85] tracking-tighter select-none">
             <div className="text-[#E50914] block">
               {PORTFOLIO_CONTENT.hero.nameLine1}
             </div>
             <div className="text-white block">
               {PORTFOLIO_CONTENT.hero.nameLine2}
             </div>
-          </div>
+          </FadeUp>
 
-          {/* Wide Red Capsule "BOOK A CALL" Treatment with Layered Border */}
-          <div className="self-start lg:self-auto">
+          {/* Wide Red Capsule "GET IN TOUCH" Treatment */}
+          <FadeUp delay={0.3} trigger="view" className="self-start lg:self-auto">
             <a
-              href="mailto:lingeshbs2007@gmail.com?subject=Book%20a%20Technical%20Call%20with%20Lingesh"
+              href="mailto:lingeshbs2007@gmail.com?subject=Opportunity%20Inquiry%20for%20Lingesh"
               className="group relative inline-flex items-center justify-between gap-6 px-10 py-6 sm:px-14 sm:py-8 bg-[#E50914] hover:bg-[#c90711] text-white rounded-full transition-all duration-300 shadow-2xl hover:scale-105 active:scale-95 border-4 border-white/10 overflow-hidden cursor-pointer"
             >
               <div className="space-y-0.5">
                 <span className="text-[11px] font-mono uppercase tracking-widest text-white/80 block">
-                  SCHEDULE DISCUSSION
+                  OPPORTUNITY INQUIRY
                 </span>
                 <span className="font-headline text-2xl sm:text-3xl text-white tracking-tight uppercase font-extrabold block">
-                  BOOK A CALL
+                  GET IN TOUCH
                 </span>
               </div>
               <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center group-hover:scale-110 transition-transform shadow-md">
                 <ArrowUpRight className="w-6 h-6" />
               </div>
             </a>
-          </div>
+          </FadeUp>
         </div>
 
         {/* Copyright notice */}
-        <div className="pt-6 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-neutral-600">
-          <p>© {new Date().getFullYear()} {PORTFOLIO_CONTENT.hero.nameLine1} {PORTFOLIO_CONTENT.hero.nameLine2}. Built with Swiss Typographic Architecture.</p>
-          <p>No template promotion credits · Real React & TypeScript Build</p>
+        <div className="pt-6 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-neutral-500">
+          <p>© {new Date().getFullYear()} Lingesh B. · Computer Science and Engineering Student · Dr. N.G.P. Institute of Technology</p>
+          <p>Tiruppur, Tamil Nadu, India · lingeshbs2007@gmail.com</p>
         </div>
       </div>
     </footer>
