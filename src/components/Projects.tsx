@@ -30,7 +30,7 @@ export const Projects: React.FC = () => {
     <section id="projects" className="py-24 sm:py-32 bg-white text-black relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Section Heading */}
-        <div className="flex items-center justify-between mb-16 pb-6 border-b border-neutral-200">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-16 pb-6 border-b border-neutral-200">
           <div className="flex items-center gap-3">
             <ScrollRotateMark targetAngle={135} size={20} color="#E50914" />
             <h2 className="font-headline text-3xl sm:text-5xl text-black tracking-tight">
@@ -86,7 +86,7 @@ export const Projects: React.FC = () => {
                   <h3 className="font-headline text-xl sm:text-2xl text-black group-hover:text-[#E50914] transition-colors leading-tight">
                     {project.title}
                   </h3>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 border border-neutral-300 text-neutral-700 whitespace-nowrap">
+                  <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 border border-neutral-300 text-neutral-700 whitespace-nowrap shrink-0">
                     {project.category}
                   </span>
                 </div>

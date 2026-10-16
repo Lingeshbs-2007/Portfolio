@@ -86,15 +86,15 @@ export const Process: React.FC = () => {
                 className="h-full"
               >
                 <div
-                  className={`p-7 sm:p-8 flex flex-col justify-between h-full min-h-[380px] sm:min-h-[420px] transition-transform duration-200 hover:-translate-y-1.5 ${cardClasses}`}
+                  className={`px-5 sm:px-6 xl:px-7 py-7 sm:py-8 flex flex-col justify-between h-full min-h-[380px] sm:min-h-[420px] transition-transform duration-200 hover:-translate-y-1.5 overflow-hidden ${cardClasses}`}
                 >
                   <div>
-                    {/* Step Title & Number Header */}
-                    <div className="flex items-start justify-between mb-8 pb-4 border-b border-current/20">
-                      <h3 className="font-headline text-2xl font-bold tracking-tight uppercase">
+                    {/* Step Title & Number Header: shifted left, neat fit */}
+                    <div className="flex items-start justify-between gap-3 mb-8 pb-4 border-b border-current/20">
+                      <h3 className="font-headline text-lg sm:text-xl lg:text-[1.2rem] xl:text-[1.35rem] font-bold tracking-tight uppercase text-left -ml-1 break-words">
                         {step.title}
                       </h3>
-                      <span className="font-mono text-xl font-bold opacity-80">
+                      <span className="font-mono text-lg sm:text-xl font-bold opacity-80 shrink-0">
                         {step.step}
                       </span>
                     </div>

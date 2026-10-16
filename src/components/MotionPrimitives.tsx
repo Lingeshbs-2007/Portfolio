@@ -31,7 +31,7 @@ export const AnimatedHeadline3D: React.FC<AnimatedHeadline3DProps> = ({
   trigger = 'view',
   as: Component = 'span',
 }) => {
-  const containerRef = useRef<HTMLSpanElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -50,23 +50,24 @@ export const AnimatedHeadline3D: React.FC<AnimatedHeadline3DProps> = ({
   }, []);
 
   const shouldAnimate = trigger === 'entry' ? fontsLoaded : isInView && fontsLoaded;
+  const isBlock = Component !== 'span';
 
   if (shouldReduceMotion) {
     return (
-      <Component className={`inline-block ${className}`} style={{ color }}>
+      <Component className={`${isBlock ? 'block' : 'inline-block'} ${className}`} style={{ color }}>
         {text}
       </Component>
     );
   }
 
-  // Split text into words to prevent letters from breaking mid-word
-  const words = text.split(' ');
+  // Handle intentional line breaks (\n) and word splitting
+  const lines = text.split('\n');
   let charGlobalIndex = 0;
 
   return (
     <Component
       ref={containerRef as any}
-      className={`inline-block ${className}`}
+      className={`${isBlock ? 'block' : 'inline-block'} ${className}`}
       style={{
         color,
         perspective: '1000px',
@@ -75,53 +76,69 @@ export const AnimatedHeadline3D: React.FC<AnimatedHeadline3DProps> = ({
       aria-label={text}
     >
       <span className="sr-only">{text}</span>
-      <span aria-hidden="true" className="inline-block">
-        {words.map((word, wordIndex) => {
-          const chars = word.split('');
+      <span aria-hidden="true" className={isBlock ? 'block w-full' : 'inline-block'}>
+        {lines.map((line, lineIndex) => {
+          const words = line.split(' ');
           return (
-            <span key={wordIndex} className="inline-block whitespace-nowrap">
-              {chars.map((char) => {
-                const charDelay = delayStart + charGlobalIndex * stagger;
-                charGlobalIndex++;
+            <span key={lineIndex} className={lines.length > 1 ? 'block w-full' : isBlock ? 'block w-full' : 'inline-block'}>
+              {words.map((word, wordIndex) => {
+                if (!word) {
+                  return (
+                    <React.Fragment key={wordIndex}>
+                      {' '}
+                    </React.Fragment>
+                  );
+                }
 
+                const chars = word.split('');
                 return (
-                  <motion.span
-                    key={charGlobalIndex}
-                    className="inline-block origin-left backface-hidden"
-                    style={{
-                      transformStyle: 'preserve-3d',
-                      backfaceVisibility: 'hidden',
-                      WebkitBackfaceVisibility: 'hidden',
-                    }}
-                    initial={{
-                      opacity: 0,
-                      rotateY: 90,
-                    }}
-                    animate={
-                      shouldAnimate
-                        ? {
-                            opacity: 1,
-                            rotateY: 0,
-                          }
-                        : {
-                            opacity: 0,
-                            rotateY: 90,
-                          }
-                    }
-                    transition={{
-                      duration: 0.95,
-                      delay: charDelay,
-                      ease: [0.16, 1, 0.3, 1], // Smooth zero-bounce spring curve
-                    }}
-                  >
-                    {char}
-                  </motion.span>
+                  <React.Fragment key={wordIndex}>
+                    <span className="inline-block whitespace-nowrap">
+                      {chars.map((char) => {
+                        const charDelay = delayStart + charGlobalIndex * stagger;
+                        charGlobalIndex++;
+
+                        return (
+                          <motion.span
+                            key={charGlobalIndex}
+                            className="inline-block backface-hidden"
+                            style={{
+                              transformStyle: 'preserve-3d',
+                              backfaceVisibility: 'hidden',
+                              WebkitBackfaceVisibility: 'hidden',
+                              transformOrigin: '50% 50%',
+                            }}
+                            initial={{
+                              opacity: 0,
+                              rotateY: 90,
+                            }}
+                            animate={
+                              shouldAnimate
+                                ? {
+                                    opacity: 1,
+                                    rotateY: 0,
+                                  }
+                                : {
+                                    opacity: 0,
+                                    rotateY: 90,
+                                  }
+                            }
+                            transition={{
+                              duration: 0.95,
+                              delay: charDelay,
+                              ease: [0.16, 1, 0.3, 1], // Smooth zero-bounce spring curve
+                            }}
+                          >
+                            {char}
+                          </motion.span>
+                        );
+                      })}
+                    </span>
+                    {/* Natural breakable space between words to ensure natural responsive wrapping */}
+                    {wordIndex < words.length - 1 && ' '}
+                  </React.Fragment>
                 );
               })}
-              {/* Preserved word spacing */}
-              {wordIndex < words.length - 1 && (
-                <span className="inline-block">&nbsp;</span>
-              )}
             </span>
           );
         })}

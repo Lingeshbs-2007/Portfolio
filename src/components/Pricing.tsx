@@ -20,7 +20,7 @@ export const Pricing: React.FC = () => {
     <section id="pricing" className="py-24 sm:py-36 bg-white text-black relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-16 pb-6 border-b border-neutral-200">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-16 pb-6 border-b border-neutral-200">
           <div className="flex items-center gap-3">
             <ScrollRotateMark targetAngle={135} size={20} color="#E50914" />
             <span className="font-headline text-3xl sm:text-5xl text-black tracking-tight">

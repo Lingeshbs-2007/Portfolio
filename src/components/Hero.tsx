@@ -37,17 +37,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenContact }) => {
     <section id="hero" className="relative w-full min-h-screen bg-white text-black pt-10 pb-16 sm:pb-24 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative">
         {/* Main 3-Part Hero Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center min-h-[75vh] sm:min-h-[82vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-center min-h-[75vh] sm:min-h-[82vh]">
           {/* LEFT: Stacked Uppercase Name & Tech Stack */}
-          <div className="lg:col-span-4 z-20 flex flex-col justify-between space-y-6 sm:space-y-8">
-            <div className="font-headline tracking-tighter leading-[0.88] text-5xl sm:text-7xl lg:text-[5.5rem] xl:text-[6.2rem]">
-              {/* Red name lines: 3D character reveal, trigger: page entry, delay: 0.15s */}
+          <div className="lg:col-span-4 z-20 flex flex-col justify-center space-y-5 sm:space-y-6 lg:space-y-6">
+            {/* Red name lines: 3D character reveal, trigger: page entry, delay: 0.15s */}
+            <div className="font-headline tracking-tighter leading-[0.96] text-4xl sm:text-6xl lg:text-[3.2rem] xl:text-[3.8rem] 2xl:text-[4.4rem]">
               <div className="text-[#E50914] block">
                 <AnimatedHeadline3D
                   text={PORTFOLIO_CONTENT.hero.nameLine1}
                   color="#E50914"
                   delayStart={0.15}
                   trigger="entry"
+                  as="div"
                 />
               </div>
               <div className="text-[#E50914] block">
@@ -56,29 +57,35 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenContact }) => {
                   color="#E50914"
                   delayStart={0.25}
                   trigger="entry"
+                  as="div"
                 />
               </div>
-              {/* Black role lines */}
-              <div className="text-black block pt-1">
+            </div>
+
+            {/* Black professional role lines: scaled cleanly to fit column and prevent overlap */}
+            <div className="font-headline tracking-tighter leading-[0.96] text-xl sm:text-2xl lg:text-[1.6rem] xl:text-[1.9rem] 2xl:text-[2.2rem] text-black">
+              <div className="block">
                 <AnimatedHeadline3D
                   text={PORTFOLIO_CONTENT.hero.roleLine1}
                   color="#000000"
                   delayStart={0.35}
                   trigger="entry"
+                  as="div"
                 />
               </div>
-              <div className="text-black block">
+              <div className="block pt-1">
                 <AnimatedHeadline3D
                   text={PORTFOLIO_CONTENT.hero.roleLine2}
                   color="#000000"
                   delayStart={0.45}
                   trigger="entry"
+                  as="div"
                 />
               </div>
             </div>
 
             {/* Left lower CTA/support group: 0.9-second delay */}
-            <FadeUp delay={0.9} trigger="entry" className="space-y-2 max-w-sm">
+            <FadeUp delay={0.9} trigger="entry" className="space-y-2 max-w-sm pt-1">
               <p className="font-bold text-xs font-mono text-neutral-800">
                 {PORTFOLIO_CONTENT.hero.greeting}
               </p>
@@ -126,12 +133,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenContact }) => {
           </div>
 
           {/* CENTER: Central portrait group: 1.1-second delay, enters with opacity & 20px upward reveal */}
-          <div className="lg:col-span-4 z-10 flex items-center justify-center relative my-6 lg:my-0">
+          <div className="lg:col-span-4 z-10 flex items-center justify-center relative my-6 lg:my-0 px-2">
             {/* Light circular/oval background halo */}
-            <div className="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full bg-[#E8E8E8] -z-10" />
+            <div className="absolute w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[320px] lg:h-[320px] xl:w-[360px] xl:h-[360px] rounded-full bg-[#E8E8E8] -z-10" />
 
             <FadeUp delay={1.1} trigger="entry" yOffset={20}>
-              <div className="relative w-[280px] sm:w-[340px] lg:w-[380px] h-[480px] sm:h-[580px] lg:h-[640px] rounded-[190px] overflow-hidden bg-[#111111] border-2 border-white shadow-2xl flex flex-col items-center justify-center text-center p-6 text-white">
+              <div className="relative w-[260px] sm:w-[300px] lg:w-[290px] xl:w-[330px] 2xl:w-[350px] h-[440px] sm:h-[500px] lg:h-[510px] xl:h-[570px] 2xl:h-[610px] rounded-[150px] xl:rounded-[175px] overflow-hidden bg-[#111111] border-2 border-white shadow-2xl flex flex-col items-center justify-center text-center p-6 text-white">
                 {PORTFOLIO_CONTENT.hero.portraitImage ? (
                   <>
                     <img
@@ -186,31 +193,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenContact }) => {
           </div>
 
           {/* RIGHT: Oversized Right-Aligned Headline, Location, & Socials */}
-          <div className="lg:col-span-4 z-20 flex flex-col justify-between items-start lg:items-end text-left lg:text-right space-y-6 sm:space-y-8">
+          <div className="lg:col-span-4 z-20 flex flex-col justify-center items-start lg:items-end text-left lg:text-right space-y-5 sm:space-y-6 lg:space-y-6">
             {/* Right headline: 3D character reveal, trigger: page entry, delay: 1.2s */}
-            <div className="font-headline tracking-tighter leading-[0.88] text-5xl sm:text-7xl lg:text-[5.5rem] xl:text-[6.2rem]">
-              <div className="text-black block">
+            <div className="font-headline tracking-tighter leading-[0.96] text-3xl sm:text-4xl md:text-5xl lg:text-[2.35rem] xl:text-[2.85rem] 2xl:text-[3.2rem] w-full flex flex-col items-start lg:items-end text-left lg:text-right">
+              <div className="text-black block w-full text-left lg:text-right">
                 <AnimatedHeadline3D
                   text={PORTFOLIO_CONTENT.hero.headlineLine1}
                   color="#000000"
                   delayStart={1.2}
                   trigger="entry"
+                  as="div"
+                  className="w-full text-left lg:text-right"
                 />
               </div>
-              <div className="text-[#E50914] block pt-1">
+              <div className="text-[#E50914] block pt-1 w-full text-left lg:text-right">
                 <AnimatedHeadline3D
                   text={PORTFOLIO_CONTENT.hero.headlineLine2}
                   color="#E50914"
                   delayStart={1.35}
                   trigger="entry"
+                  as="div"
+                  className="w-full text-left lg:text-right"
                 />
               </div>
-              <div className="text-[#E50914] block">
+              <div className="text-[#E50914] block pt-1 w-full text-left lg:text-right">
                 <AnimatedHeadline3D
                   text={PORTFOLIO_CONTENT.hero.headlineLine3}
                   color="#E50914"
                   delayStart={1.5}
                   trigger="entry"
+                  as="div"
+                  className="w-full text-left lg:text-right"
                 />
               </div>
             </div>

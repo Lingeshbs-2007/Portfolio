@@ -50,7 +50,7 @@ export const Contact: React.FC = () => {
           </FadeUp>
 
           {/* Main heading: 3D character reveal, delay: 0.15s */}
-          <h2 className="font-headline text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[0.92] text-white">
+          <h2 className="font-headline text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[0.96] text-white">
             <AnimatedHeadline3D
               text="LET’S"
               color="#FFFFFF"
