@@ -94,17 +94,17 @@ export const PROJECTS: Project[] = [
     id: 'certichain',
     name: 'CertiChain',
     title: 'CertiChain — Blockchain-Based Certificate Verification System',
-    description: 'A blockchain-based certificate verification application designed to explore tamper-resistant certificate records and easier verification of academic credentials.',
+    description: 'A prototype blockchain-based certificate verification application designed to explore tamper-resistant certificate records and public verification workflows via Ethereum smart contracts.',
     technologies: ['React', 'Vite', 'Solidity', 'Ethers.js', 'MetaMask', 'Ethereum'],
     category: 'Blockchain',
     features: [
-      'Authorized certificate issuance workflow',
-      'Certificate record retrieval and verification portal',
+      'Authorized certificate issuance workflow by accredited institutions',
+      'Public certificate verification portal to query credential validity',
       'Tamper-resistant credential records managed via Solidity smart contracts',
-      'Direct verification interface eliminating intermediary attestation delays'
+      'Direct smart-contract query interface for verifying credential authenticity'
     ],
     architectureDetails: [
-      'Cryptographic record hash storage verifying academic authenticity without third-party delay',
+      'Cryptographic record hash storage verifying academic authenticity via smart contract state',
       'Smart contract mapping institution authority to credential IDs',
       'Web interface for public certificate lookup and authenticity verification'
     ]
@@ -212,9 +212,16 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   {
     id: 'hackiton-24hr',
     title: "HackITon'26 24-Hour Hackathon",
-    organization: 'K.S.R. College of Engineering',
+    organization: 'KPR Institute of Engineering and Technology',
     type: 'Hackathon',
-    description: 'Participated in a 24-hour hackathon (October 8–9, 2026) developing predictive solar energy optimization for grid-connected homes.'
+    description: 'Participated in a 24-hour hackathon (October 8–9, 2026) developing predictive solar energy forecasting and household consumption optimization for grid-connected homes without battery storage.'
+  },
+  {
+    id: 'vibecode-hackathon',
+    title: "VibeCode'26 Hackathon",
+    organization: 'K.S.R. College of Technology',
+    type: 'Hackathon',
+    description: 'Participated in the VibeCode\'26 hackathon at K.S.R. College of Technology, collaborating on competitive programming and fast-paced software prototyping challenges.'
   },
   {
     id: 'kpr-ignitrion',

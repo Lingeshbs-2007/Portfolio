@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { EditorialPanel } from './components/EditorialPanel';
 import { Projects } from './components/Projects';
 import { StatementAbout } from './components/StatementAbout';
+import { Education } from './components/Education';
 import { Services } from './components/Services';
 import { Process } from './components/Process';
 import { Testimonials } from './components/Testimonials';
@@ -31,13 +32,16 @@ export default function App() {
       {/* 2. Full-Width Motion-Blurred Photographic Panel */}
       <EditorialPanel />
 
-      {/* 3. Selected Projects (3-column grid, 6 projects, varied proportions, indices) */}
+      {/* 3. Selected Projects (3-column grid, 5 verified projects) */}
       <Projects />
 
       {/* 4. Statement & About (DRIVEN BY DESIGN, POWERED BY PURPOSE, capsule reel, stats, bio) */}
       <StatementAbout />
 
-      {/* 5. Services (Staggered offset cards, dark/light themes, blurred background headline) */}
+      {/* 5. Education & Credentials (Degrees, Techvolt Internship, Certifications, LeetCode, Skills) */}
+      <Education />
+
+      {/* 6. Technical Interests & Skills */}
       <Services />
 
       {/* 6. Process & Brand Logos (FROM IDEA to LAUNCH, 4 cards, brand logos) */}

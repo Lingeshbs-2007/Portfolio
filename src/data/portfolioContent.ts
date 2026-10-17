@@ -33,8 +33,10 @@ export interface OpportunityPlan {
   type: 'Internship' | 'Academic & Projects';
   label: string;
   badge: string;
-  price: string;
-  period: string;
+  availabilityTitle: string;
+  availabilitySubtitle: string;
+  price?: string;
+  period?: string;
   description: string;
   features: string[];
 }
@@ -62,7 +64,7 @@ export const PORTFOLIO_CONTENT = {
     headlineLine2: 'PRACTICAL',
     headlineLine3: 'SOFTWARE',
     location: 'TIRUPPUR, INDIA',
-    experienceYears: '200+ LeetCode · 4 Core Projects',
+    experienceYears: '200+ LeetCode · 5 Core Projects',
     copyright: '©2026',
     educationShort: 'B.E. CSE (CGPA 8.20) · Dr. N.G.P. Institute of Technology',
     portraitImage: '', // Blank by default so container renders the stylized initials/silhouette card rather than an unrelated portrait
@@ -88,65 +90,64 @@ export const PORTFOLIO_CONTENT = {
   projects: [
     {
       id: 'fertitrack',
-      index: '01 / 06',
+      index: '01 / 05',
       title: 'FERTITRACK — BLOCKCHAIN SUBSIDY TRACKING',
       category: 'BLOCKCHAIN / SEPOLIA',
       year: '2025',
       image: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=900&q=80',
       aspect: 'tall',
       description:
-        'A blockchain-based application designed to improve the traceability and transparency of fertilizer subsidy distribution. The project explores smart-contract-based eligibility and claim tracking, farmer records, dealer interactions, and public visibility of distribution statistics.',
+        'A prototype blockchain-based application designed to explore transparency and traceability in agricultural fertilizer subsidy distribution. Built on Ethereum Sepolia testnet to explore smart-contract-based eligibility, simulated farmer voucher claims, and public monitoring.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Solidity', 'Ethers.js v6', 'MetaMask', 'Ethereum Sepolia'],
       features: [
-        'Farmer registration by an authorized administrator',
-        'Smart-contract-based fertilizer voucher and claim tracking',
-        'Dealer interaction with farmer records',
-        'Public dashboard statistics for transparent monitoring',
-        'Hashed Aadhaar representation rather than storing raw Aadhaar numbers in the smart contract'
+        'Authorized administrator registration for simulated farmer records',
+        'Smart-contract-based fertilizer voucher issuance and claim tracking on Sepolia',
+        'Licensed dealer interface for validating and claiming allocated vouchers',
+        'Public dashboard view for transparent tracking of distribution statistics',
+        'SHA-256 hashed representation of identification data rather than storing raw Aadhaar numbers on-chain'
       ],
       githubUrl: 'https://github.com/Lingeshbs-2007/FertiTrack'
     },
     {
       id: 'certichain',
-      index: '02 / 06',
+      index: '02 / 05',
       title: 'CERTICHAIN — CERTIFICATE VERIFICATION',
       category: 'BLOCKCHAIN / ETHEREUM',
       year: '2025',
       image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=900&q=80',
       aspect: 'landscape',
       description:
-        'A blockchain-based certificate verification application designed to explore tamper-resistant certificate records and easier verification of academic credentials.',
+        'A prototype blockchain-based certificate verification application designed to explore tamper-resistant academic credential records and public verification workflows via Ethereum smart contracts.',
       technologies: ['React', 'Vite', 'Solidity', 'Ethers.js', 'MetaMask', 'Ethereum'],
       features: [
-        'Authorized certificate issuance workflow',
-        'Certificate record retrieval and verification portal',
+        'Authorized certificate issuance workflow by accredited institutions',
+        'Public certificate verification portal to query credential validity',
         'Tamper-resistant credential records managed via Solidity smart contracts',
-        'Direct verification interface eliminating intermediary attestation delays'
+        'Direct smart-contract query interface for verifying credential authenticity'
       ],
       githubUrl: 'https://github.com/Lingeshbs-2007/CertiChain'
     },
     {
       id: 'fpo-ledger',
-      index: '03 / 06',
+      index: '03 / 05',
       title: 'FPO LEDGER & PROFIT-SHARING',
       category: 'SMART CONTRACTS / WEB3',
       year: '2025',
       image: 'https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=900&q=80',
       aspect: 'tall',
       description:
-        'A blockchain-based project exploring transparent transaction records for Farmer Producer Organizations, including farmer purchases, buyer sales, and rule-based profit-sharing calculations.',
+        'A prototype smart-contract project exploring transparent record-keeping for Farmer Producer Organizations (FPOs), including member crop records, purchase logs, and automated profit-sharing calculation rules.',
       technologies: ['Solidity', 'Ethereum', 'Smart Contracts', 'React', 'Web3'],
       features: [
-        'Transparent transaction records for farmer produce, purchases, and sales',
-        'Solidity smart contract implementing rule-based profit-sharing calculations',
-        'Decentralized ledger accessible to registered collective members',
-        'Ongoing exploration into automated agricultural collective revenue distribution'
-      ],
-      githubUrl: 'https://github.com/Lingeshbs-2007'
+        'Transparent ledger records for farmer produce, purchases, and sales transactions',
+        'Solidity smart contract prototype implementing rule-based profit-sharing calculation logic',
+        'Role-based smart contract access for registered collective members',
+        'Exploratory smart contract architecture for cooperative accounting transparency'
+      ]
     },
     {
       id: 'jarvis',
-      index: '04 / 06',
+      index: '04 / 05',
       title: 'JARVIS — PERSONAL VOICE ASSISTANT',
       category: 'PYTHON / AUTOMATION',
       year: '2024',
@@ -157,15 +158,14 @@ export const PORTFOLIO_CONTENT = {
       technologies: ['Python', 'Speech Recognition', 'pyttsx3', 'Desktop Automation'],
       features: [
         'Vocal command capture and acoustic speech recognition pipeline in Python',
-        'Text-to-speech synthesized audio feedback for conversational interaction',
+        'Text-to-speech synthesized audio feedback using pyttsx3',
         'Desktop task automation: launching applications, search queries, and system routines',
         'Personal development project exploring voice-driven developer productivity'
-      ],
-      githubUrl: 'https://github.com/Lingeshbs-2007'
+      ]
     },
     {
       id: 'smart-helmet',
-      index: '05 / 06',
+      index: '05 / 05',
       title: 'SMART HELMET FOR RIDER SAFETY',
       category: 'EMBEDDED HARDWARE / IOT',
       year: '2024',
@@ -179,27 +179,7 @@ export const PORTFOLIO_CONTENT = {
         'Integrated GPS and GSM modules for real-time emergency alert SMS dispatch',
         'Tri-axis accelerometer trigger for automated accident detection',
         'Speed monitoring via potentiometer sensor telemetry'
-      ],
-      githubUrl: 'https://github.com/Lingeshbs-2007'
-    },
-    {
-      id: 'leetcode-vault',
-      index: '06 / 06',
-      title: '200+ LEETCODE ALGORITHMIC SUITE',
-      category: 'DATA STRUCTURES / JAVA',
-      year: '2024–2026',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80',
-      aspect: 'landscape',
-      description:
-        'Practicing Data Structures and Algorithms in Java and continuously improving problem-solving skills through LeetCode, covering arrays, strings, linked lists, trees, graphs, and dynamic programming.',
-      technologies: ['Java', 'Algorithms', 'Data Structures', 'OOP', 'Problem Solving'],
-      features: [
-        '200+ algorithmic problems solved with clean Java implementations',
-        'Focus on optimal time and space complexity across core problem patterns',
-        'Active problem-solving profile on LeetCode: leetcode.com/u/J00i7ZP2T8/',
-        'Building strong computer science foundations for software engineering interviews'
-      ],
-      githubUrl: 'https://leetcode.com/u/J00i7ZP2T8/'
+      ]
     }
   ] as ProjectItem[],
   statement: {
@@ -381,11 +361,20 @@ export const PORTFOLIO_CONTENT = {
   activitiesAndEvents: [
     {
       id: 'hackiton',
-      eventName: "HackITon'26 · K.S.R. College of Engineering",
+      eventName: "HackITon'26 · KPR Institute of Engineering & Technology",
       role: '24-Hour Hackathon · Oct 8–9, 2026',
       avatar: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=150&q=80',
-      initialMessage: 'Participated in an intensive 24-hour hackathon, working on predictive solar energy optimization for grid-connected homes.',
-      responseMessage: 'Engineered an algorithmic approach for household solar generation prediction and battery balancing under rapid hackathon constraints.',
+      initialMessage: 'Participated in an intensive 24-hour hackathon, working on predictive solar energy forecasting and household load scheduling for grid-connected homes without battery storage.',
+      responseMessage: 'Developed an algorithmic approach for solar generation forecasting and household energy consumption optimization under rapid hackathon constraints.',
+      tag: 'HACKATHON PARTICIPATION'
+    },
+    {
+      id: 'vibecode',
+      eventName: "VibeCode'26 · K.S.R. College of Technology",
+      role: 'Hackathon Participation · 2026',
+      avatar: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=150&q=80',
+      initialMessage: 'Participated in the VibeCode\'26 hackathon, tackling collaborative software problem-solving and rapid prototyping challenges.',
+      responseMessage: 'Collaborated on rapid solution ideation, algorithmic problem breakdown, and working prototype development under hackathon deadlines.',
       tag: 'HACKATHON PARTICIPATION'
     },
     {
@@ -412,7 +401,7 @@ export const PORTFOLIO_CONTENT = {
       role: 'Executive Member · Event Coordination',
       avatar: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=150&q=80',
       initialMessage: 'Executive Member of the Student Development Council, contributing to planning and coordinating institutional technical events.',
-      responseMessage: 'Coordinated technical symposium sessions including KANAM\'26, speaker logistics, and collaborative peer learning activities.',
+      responseMessage: 'Contributed to event planning, student team coordination, and session execution for the KANAM\'26 technical symposium.',
       tag: 'COUNCIL LEADERSHIP'
     }
   ] as TestimonialItem[],
@@ -421,8 +410,8 @@ export const PORTFOLIO_CONTENT = {
       type: 'Internship',
       label: 'TECHNICAL INTERNSHIP',
       badge: 'OPEN TO WORK',
-      price: '2026',
-      period: 'Opportunities',
+      availabilityTitle: 'OPEN FOR INTERNSHIP',
+      availabilitySubtitle: 'Software Development & Technical Roles',
       description: 'Seeking software development internships to apply problem-solving skills in Java, React, SQL, and Web3 technologies.',
       features: [
         'Dedicated student engineer eager to learn & contribute',
@@ -437,11 +426,11 @@ export const PORTFOLIO_CONTENT = {
       type: 'Academic & Projects',
       label: 'ACADEMIC & HACKATHONS',
       badge: 'COLLABORATION',
-      price: 'OPEN',
-      period: 'Projects',
+      availabilityTitle: 'OPEN TO COLLABORATE',
+      availabilitySubtitle: 'Hackathons, Competitions & Open Source',
       description: 'Open for hackathons, engineering competitions, research paper presentations, and open-source contributions.',
       features: [
-        'Hands-on hackathon experience (HackITon\'26 24-hr)',
+        'Hands-on hackathon experience (HackITon\'26 & VibeCode\'26)',
         'Paper and project presentation experience (KPR Ignitrion)',
         'Decentralized systems and AI application interest',
         'Modular, maintainable code with git version control',

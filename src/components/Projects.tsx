@@ -38,7 +38,7 @@ export const Projects: React.FC = () => {
             </h2>
           </div>
           <span className="font-mono text-xs sm:text-sm text-neutral-500 uppercase tracking-widest">
-            [ 06 CASE STUDIES ]
+            [ 05 CASE STUDIES ]
           </span>
         </div>
 
@@ -209,25 +209,22 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Action Link */}
-                <div className="pt-4 border-t border-neutral-200 flex items-center justify-between">
-                  <a
-                    href={selectedProject.githubUrl || 'https://github.com/Lingeshbs-2007'}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#E50914] hover:bg-[#c90711] text-white font-headline text-xs tracking-wider uppercase font-bold transition-colors"
-                  >
-                    {selectedProject.id === 'leetcode-vault' ? (
-                      <>
-                        <ExternalLink className="w-4 h-4" />
-                        <span>VIEW LEETCODE PROFILE</span>
-                      </>
-                    ) : (
-                      <>
-                        <Github className="w-4 h-4" />
-                        <span>VIEW REPOSITORY</span>
-                      </>
-                    )}
-                  </a>
+                <div className="pt-4 border-t border-neutral-200 flex items-center justify-between gap-4">
+                  {selectedProject.githubUrl ? (
+                    <a
+                      href={selectedProject.githubUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#E50914] hover:bg-[#c90711] text-white font-headline text-xs tracking-wider uppercase font-bold transition-colors cursor-pointer"
+                    >
+                      <Github className="w-4 h-4" />
+                      <span>VIEW REPOSITORY</span>
+                    </a>
+                  ) : (
+                    <div className="inline-flex items-center gap-2 px-4 py-2.5 bg-neutral-100 border border-neutral-200 text-neutral-700 font-mono text-xs font-semibold">
+                      <span>PROTOTYPE / ACADEMIC PROJECT</span>
+                    </div>
+                  )}
 
                   <button
                     onClick={() => setSelectedProject(null)}

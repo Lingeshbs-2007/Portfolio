@@ -138,13 +138,13 @@ export const Pricing: React.FC = () => {
                 </span>
               </div>
 
-              {/* Header Metric */}
-              <div className="flex items-baseline gap-2">
-                <span className="font-headline text-4xl sm:text-5xl text-white font-extrabold tracking-tight">
-                  {currentPlan.price}
+              {/* Availability Status Header (No arbitrary price metric) */}
+              <div className="space-y-1">
+                <span className="font-headline text-3xl sm:text-4xl text-white font-extrabold tracking-tight block">
+                  {currentPlan.availabilityTitle}
                 </span>
-                <span className="text-neutral-400 font-mono text-sm">
-                  {currentPlan.period}
+                <span className="text-[#E50914] font-mono text-xs tracking-wider uppercase font-semibold block">
+                  {currentPlan.availabilitySubtitle}
                 </span>
               </div>
 
