@@ -125,17 +125,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenContact }) => {
 
           {/* CENTER: Central portrait group: 1.1-second delay, enters with opacity & 20px upward reveal */}
           <div className="lg:col-span-4 z-10 flex items-center justify-center relative my-6 lg:my-0 px-2">
-            {/* Soft red and white oval halo matching the site palette */}
-            <div className="absolute w-[280px] h-[460px] sm:w-[320px] sm:h-[520px] lg:w-[310px] lg:h-[530px] xl:w-[350px] xl:h-[590px] 2xl:w-[370px] 2xl:h-[630px] rounded-full bg-gradient-to-br from-white via-[#F4F4F4] to-[#FCE4E5] border border-[#E50914]/20 shadow-[0_0_70px_rgba(229,9,20,0.12)] -z-10" />
+            {/* Deep charcoal and red halo ties the portrait into the site palette */}
+            <div className="absolute w-[280px] h-[460px] sm:w-[320px] sm:h-[520px] lg:w-[310px] lg:h-[530px] xl:w-[350px] xl:h-[590px] 2xl:w-[370px] 2xl:h-[630px] rounded-full bg-gradient-to-br from-[#35151a] via-[#1b1519] to-[#101114] border border-[#E50914]/35 shadow-[0_0_90px_rgba(229,9,20,0.22)] -z-10" />
 
             <FadeUp delay={1.1} trigger="entry" yOffset={20}>
-              <div className="relative w-[260px] sm:w-[300px] lg:w-[290px] xl:w-[330px] 2xl:w-[350px] h-[440px] sm:h-[500px] lg:h-[510px] xl:h-[570px] 2xl:h-[610px] rounded-[150px] xl:rounded-[175px] overflow-hidden bg-[#111111] border-2 border-white shadow-2xl flex flex-col items-center justify-center text-center text-white">
+              <div className="relative w-[260px] sm:w-[300px] lg:w-[290px] xl:w-[330px] 2xl:w-[350px] h-[440px] sm:h-[500px] lg:h-[510px] xl:h-[570px] 2xl:h-[610px] rounded-[150px] xl:rounded-[175px] overflow-hidden bg-[#111111] border-2 border-[#E50914]/50 shadow-[0_24px_80px_rgba(0,0,0,0.55)] flex flex-col items-center justify-center text-center text-white">
                 {PORTFOLIO_CONTENT.hero.portraitImage ? (
                   <>
                     <img
                       src={PORTFOLIO_CONTENT.hero.portraitImage}
                       alt="Lingesh.B — Computer Science and Engineering Student"
-                      className="absolute inset-0 w-full h-full object-cover object-[center_42%] scale-[1.16] filter grayscale contrast-110"
+                      className="absolute inset-0 w-full h-full object-cover object-[center_38%] contrast-[1.04]"
                     />
                     <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   </>
