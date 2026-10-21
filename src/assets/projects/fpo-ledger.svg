@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" fill="none">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#314735"/><stop offset="1" stop-color="#182820"/></linearGradient><linearGradient id="book" x2="1"><stop stop-color="#E9DFBC"/><stop offset="1" stop-color="#C7B98F"/></linearGradient></defs>
+  <path fill="url(#bg)" d="M0 0h900v675H0z"/><path d="M0 429c194-91 326-46 479 6s286 38 421-40v280H0z" fill="#58754D"/><path d="M0 514c192-86 307-46 472 11s294 23 428-49v199H0z" fill="#334F38"/>
+  <g stroke="#9BAF6A" stroke-width="5" opacity=".7"><path d="M-30 601c181-91 324-31 473 20s312 9 495-72M-30 645c181-91 324-31 473 20s312 9 495-72"/></g>
+  <path d="M257 194c72-42 144-45 215-7v319c-73-36-145-32-215 10z" fill="url(#book)"/><path d="M472 187c71-38 143-35 215 7v322c-70-42-142-46-215-10z" fill="#F4EDDA"/><path d="M472 187v319" stroke="#8D825F" stroke-width="8"/>
+  <g stroke="#84927A" stroke-width="7" stroke-linecap="round"><path d="M296 250h134M296 287h134M296 324h115M296 394h134M296 431h107M509 249h135M509 286h121M509 323h135M509 394h135M509 431h112"/></g>
+  <circle cx="686" cy="170" r="70" fill="#DDBE68"/><path d="M657 169c19-38 42-53 71-48-7 36-29 54-71 48Z" fill="#6F8B4E"/><path d="M657 171c22-24 44-37 67-43" stroke="#F5E4A0" stroke-width="4"/>
+  <g fill="#D8C27D"><circle cx="194" cy="390" r="21"/><circle cx="194" cy="465" r="21"/><circle cx="194" cy="540" r="21"/></g><g stroke="#E9D9A5" stroke-width="6"><path d="M194 390h45M194 465h45M194 540h45"/></g>
+  <text x="302" y="226" fill="#405747" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">FPO LEDGER</text><text x="520" y="226" fill="#405747" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">SHARED VALUE</text>
+</svg>

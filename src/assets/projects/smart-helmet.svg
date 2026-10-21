@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" fill="none">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#272D35"/><stop offset="1" stop-color="#101418"/></linearGradient><linearGradient id="helmet" x2="1" y2="1"><stop stop-color="#F3A33B"/><stop offset="1" stop-color="#C44B25"/></linearGradient></defs>
+  <path fill="url(#bg)" d="M0 0h900v675H0z"/><path d="M0 474h900v201H0z" fill="#20262A"/><path d="M0 543h900" stroke="#E0B955" stroke-width="6" stroke-dasharray="58 45" opacity=".8"/><path d="M0 617h900" stroke="#667078" stroke-width="3"/>
+  <path d="M168 402c0-142 119-256 270-256 136 0 240 91 269 216l-132 55H168z" fill="url(#helmet)" stroke="#FFD087" stroke-width="9"/><path d="M438 146c-75 26-123 84-141 174 69-55 147-79 234-67-21-53-52-88-93-107Z" fill="#F8BD5D" opacity=".7"/><path d="M166 416h435c37 0 63 17 77 50H261c-45 0-77-17-95-50Z" fill="#D9552D" stroke="#F3A658" stroke-width="8"/><path d="M238 432c32-24 69-36 110-36" stroke="#FFE0A5" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="632" cy="220" r="63" fill="#252D32" stroke="#72C9C0" stroke-width="6"/><path d="M632 180v40l27 19" stroke="#C6F3DF" stroke-width="8" stroke-linecap="round"/><path d="M632 143v-27m77 104h27m-158 0h-27" stroke="#72C9C0" stroke-width="5"/>
+  <path d="M710 347h96" stroke="#72C9C0" stroke-width="4"/><circle cx="806" cy="347" r="8" fill="#72C9C0"/><path d="m702 335 20 12-20 12" stroke="#72C9C0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="330" y="370" fill="#FFF2D7" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">RIDER SAFETY</text>
+</svg>

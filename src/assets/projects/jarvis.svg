@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101827"/><stop offset="1" stop-color="#242143"/></linearGradient>
+    <radialGradient id="core"><stop stop-color="#D6F9FF"/><stop offset=".18" stop-color="#76D5FF"/><stop offset=".58" stop-color="#835EFF"/><stop offset="1" stop-color="#5037A5" stop-opacity=".08"/></radialGradient>
+    <linearGradient id="panel" x2="0" y2="1"><stop stop-color="#202D45"/><stop offset="1" stop-color="#151D30"/></linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h900v675H0z"/>
+  <g stroke="#6F83BA" opacity=".35"><path d="M0 135h900M0 540h900M150 0v675M750 0v675"/><circle cx="450" cy="320" r="250"/><circle cx="450" cy="320" r="205"/></g>
+  <path d="M0 456h900v219H0z" fill="#111827" opacity=".72"/>
+  <path d="M102 205h190v160H102z" fill="url(#panel)" stroke="#546A9B" stroke-width="2"/><path d="M126 238h89m-89 24h129m-129 24h70" stroke="#7593D5" stroke-width="7" stroke-linecap="round"/><circle cx="252" cy="237" r="7" fill="#88F0DF"/>
+  <path d="M608 205h190v160H608z" fill="url(#panel)" stroke="#546A9B" stroke-width="2"/><path d="M633 245h137m-137 26h96m-96 26h122" stroke="#7593D5" stroke-width="7" stroke-linecap="round"/><path d="m663 326 16 16 32-38" stroke="#88F0DF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="450" cy="315" r="133" fill="url(#core)"/><circle cx="450" cy="315" r="105" stroke="#C6F6FF" stroke-width="2" opacity=".75"/><circle cx="450" cy="315" r="78" stroke="#A8BBFF" stroke-width="2" opacity=".65"/>
+  <path d="M405 310c0-26 20-46 45-46s45 20 45 46v22c0 25-20 45-45 45s-45-20-45-45v-22Z" fill="#10192C" fill-opacity=".8" stroke="#D9FBFF" stroke-width="4"/><path d="M423 310h9m36 0h9m-39 26c7 7 18 7 25 0" stroke="#A8F3FF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M450 238v-38m0 230v-38m-77-77h-38m230 0h-38m-131-54-27-27m162 162-27-27m0-108 27-27m-162 162 27-27" stroke="#B7E9FF" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+  <g fill="#A8F3FF"><circle cx="450" cy="200" r="6"/><circle cx="450" cy="430" r="6"/><circle cx="335" cy="315" r="6"/><circle cx="565" cy="315" r="6"/><circle cx="369" cy="234" r="5"/><circle cx="531" cy="396" r="5"/><circle cx="531" cy="234" r="5"/><circle cx="369" cy="396" r="5"/></g>
+  <path d="M278 488h344l-25 59H303z" fill="#202D45" stroke="#526A9B" stroke-width="2"/><path d="M337 518h227" stroke="#8D7BFF" stroke-width="4" stroke-linecap="round"/><text x="377" y="603" fill="#E2F8FF" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="8">JARVIS AI</text>
+</svg>
